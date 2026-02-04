@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { Component } from "react";
 
 class LifecycleLogger extends Component {
   constructor(props) {
@@ -10,31 +10,29 @@ class LifecycleLogger extends Component {
   }
 
   componentDidMount() {
-    console.log('Component mounted...');
+    console.log("Component mounted");
   }
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.count !== this.state.count) {
-      console.log('Component updated...', this.state.count);
+      console.log("Component updated...", this.state.count);
     }
   }
 
   componentWillUnmount() {
-    console.log('Component unmount...');
+    console.log("Component unmount...");
   }
 
   incrementCount = () => {
-    this.setState((prevState) => ({
-      count: prevState.count + 1,
-    }));
+    this.setState((prevState) => ({ count: prevState.count + 1 }));
   };
 
   render() {
     return (
-      <div className='logger-container'>
+      <div className="logger-container">
         <h2>LifecycleLogger (Class Component)</h2>
         <p>Count: {this.state.count}</p>
-        <button onClick={this.incrementCount} className='secondary-btn'>
+        <button onClick={this.incrementCount} className="secondary-btn">
           Update
         </button>
       </div>
